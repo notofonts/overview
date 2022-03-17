@@ -278,6 +278,16 @@ function rebuildSummary() {
   }
 }
 
+function coveragepercent(summary_block) {
+  var len = summary_block.summary.length;
+  var missing = (summary_block.summary.match(/0/g) || []).length;
+  var there = (summary_block.summary.match(/[1M]/g) || []).length;
+  if (!(missing + there)) {
+    return 0;
+  }
+  return there / (missing + there);
+}
+
 $(function () {
   $.getJSON("blocks.json", function (data) {
     window.summary = data;
@@ -287,6 +297,10 @@ $(function () {
     if ($("#sort").val() == "alpha") {
       window.summary = window.summary.sort((a, b) =>
         a.name.localeCompare(b.name)
+      );
+    } else if ($("#sort").val() == "coverage") {
+      window.summary = window.summary.sort(
+        (a, b) => coveragepercent(a) - coveragepercent(b)
       );
     } else {
       window.summary = window.summary.sort((a, b) => a.ix - b.ix);
