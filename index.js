@@ -156,7 +156,7 @@ function appendFullBlock(mydata) {
   cols_domain = [...Array(cols).keys()];
   data = [];
   var index = 0;
-  console.log(mydata);
+  // console.log(mydata);
   while (index < codepoints) {
     var ix = mydata.start + index;
     var cp = mydata.cps[ix] || { unassigned: "true" };
@@ -180,7 +180,7 @@ function appendFullBlock(mydata) {
     });
     index = index + 1;
   }
-  console.log(data);
+  // console.log(data);
 
   myColor = function (el) {
     if (el.unassigned) {
@@ -231,6 +231,10 @@ function appendFullBlock(mydata) {
       return;
     }
     window.oldcp = d.cp;
+    var start_string;
+    if (!d.fonts[0]) {
+      start_string = "";
+    }
     if (window.curfont != d.fonts[0]) {
       start_string = "Loading...";
     } else {
@@ -255,7 +259,7 @@ function appendFullBlock(mydata) {
     if (d.fonts && window.curfont != d.fonts[0]) {
       setTimeout(function () {
         var thisfont = d.fonts[0];
-        console.log("Loading");
+        // console.log("Loading");
         $("#anotofont").text(`
             @font-face {
                font-family: "Noto ${thisfont}";
@@ -267,10 +271,10 @@ function appendFullBlock(mydata) {
           glyphs: String.fromCodePoint(d.cp),
           success: function () {
             $("#char").html(String.fromCodePoint(d.cp));
-            console.log("Loaded font " + thisfont);
+            // console.log("Loaded font " + thisfont);
           },
           failure: function () {
-            console.log("Failed to load font " + thisfont);
+            // console.log("Failed to load font " + thisfont);
             $("#char").html(String.fromCodePoint(d.cp));
           },
         });
