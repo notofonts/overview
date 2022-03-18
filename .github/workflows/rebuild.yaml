@@ -1,7 +1,6 @@
 name: Rebuild and deploy data files
 
 on:
-  push:
   schedule:
     - cron: '0 0 * * 1'
 
