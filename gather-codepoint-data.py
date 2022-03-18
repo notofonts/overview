@@ -30,8 +30,7 @@ block_ranges = sorted(database["Blocks.txt"]["reader"]("Blocks.txt"), key=lambda
 blocks = []
 for ix, (start, end, name) in enumerate(block_ranges):
     if (
-        "CJK Unified Ideographs" in name
-        or "Private Use Area" in name
+        "Private Use Area" in name
         or "Surrogates" in name
         or "Variation Selectors" in name
         or name == "Tags"
