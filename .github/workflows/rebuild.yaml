@@ -33,7 +33,7 @@ jobs:
     - name: Fetch Noto Emoji
       uses: actions/checkout@v2
       with:
-        repository: https://github.com/googlefonts/noto-emoji
+        repository: googlefonts/noto-emoji
         path: noto-emoji
     - name: Gather data
       run: python gather-codepoint-data.py
