@@ -234,8 +234,7 @@ function appendFullBlock(mydata) {
     var start_string;
     if (!d.fonts[0]) {
       start_string = "";
-    }
-    if (window.curfont != d.fonts[0]) {
+    } else if (window.curfont != d.fonts[0]) {
       start_string = "Loading...";
     } else {
       start_string = String.fromCodePoint(d.cp);
