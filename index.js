@@ -214,10 +214,10 @@ function appendFullBlock(mydata) {
 
   // Three function that change the tooltip when user hover / move / leave a cell
   var mouseover = function (d) {
-    tooltip.style("opacity", 1);
     if (d.unassigned) {
       return;
     }
+    tooltip.style("opacity", 1);
     d3.select(this).style("stroke", "black").style("opacity", 1);
   };
   var mousemove = function (d) {
@@ -283,9 +283,6 @@ function appendFullBlock(mydata) {
     }
   };
   var mouseleave = function (d) {
-    if (d.unassigned) {
-      return;
-    }
     tooltip.style("opacity", 0);
     d3.select(this).style("stroke", "none").style("opacity", 0.8);
   };
