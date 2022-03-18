@@ -7,14 +7,26 @@ import json
 
 font_files = {}
 noto_codepoints = defaultdict(list)
-for fontfile in glob.glob("../regular/*.?tf"):
-    font = TTFont(fontfile)
-    font_name = font["name"].getDebugName(1).replace("Noto ", "")
-    font_files[font_name] = basename(fontfile)
-    for k in font.getBestCmap().keys():
-        noto_codepoints[k].append(font_name)
 
-block_ranges = database["Blocks.txt"]["reader"]("Blocks.txt")
+sources = [
+    "noto-fonts/unhinted/ttf/*/*Regular.?tf",
+    "noto-cjk/Sans/OTF/*/*Regular.?tf",
+    "noto-emoji/fonts/NotoColorEmoji.ttf"
+]
+for source in sources:
+    for fontfile in glob.glob(source):
+        font = TTFont(fontfile)
+        font_name = font["name"].getDebugName(1).replace("Noto ", "")
+        font_files[font_name] = fontfile
+        for k in font.getBestCmap().keys():
+            noto_codepoints[k].append(font_name)
+
+def fontsort(font):
+    if font in ["Arimo", "Tinos", "Cousine"]:
+        return 'ZZZ'+font
+    return font
+
+block_ranges = sorted(database["Blocks.txt"]["reader"]("Blocks.txt"), key=lambda b:b[0])
 blocks = []
 for ix, (start, end, name) in enumerate(block_ranges):
     if (
@@ -47,7 +59,7 @@ for ix, (start, end, name) in enumerate(block_ranges):
             coverage = "partial"
         if cp in noto_codepoints and noto_codepoints[cp]:
             has_some = True
-            cps[cp]["fonts"] = noto_codepoints[cp]
+            cps[cp]["fonts"] = list(sorted(noto_codepoints[cp], key=fontsort))
             if len(noto_codepoints[cp]) > 1:
                 summary += "M"
             else:
@@ -84,3 +96,4 @@ for ix, (start, end, name) in enumerate(block_ranges):
     blocks.append(summary_block)
 
 json.dump(blocks, open("blocks.json", "w"))
+json.dump(font_files, open("fontfiles.json", "w"))

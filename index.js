@@ -1,4 +1,12 @@
 var loaded_blocks = {};
+var cdn = "https://cdn.jsdelivr.net/gh/googlefonts/";
+function fontname2url(font) {
+  var fontpath = window.fontfiles[font];
+  fontpath = fontpath.replace("noto-fonts", "noto-fonts@main");
+  fontpath = fontpath.replace("noto-cjk", "noto-cjk@main");
+  fontpath = fontpath.replace("noto-emoji", "noto-emoji@main");
+  return cdn + fontpath;
+}
 
 function doModal(block) {
   var myModal = new bootstrap.Modal(document.getElementById("modal"), {});
@@ -31,10 +39,19 @@ function appendSummaryBlock(ix, mydata) {
   height = 200;
 
   var mydiv = $('<div class="pane card p-1">');
+  mydiv.data("block-id", mydata.ix);
+  mydiv.click(loadBlock);
   $("#panes").append(mydiv);
+  if (coveragepercent(mydata) == 1.0) {
+    mydiv.addClass("covered");
+  } else if (coveragepercent(mydata) == 0.0) {
+    mydiv.addClass("empty");
+  } else {
+    mydiv.addClass("partial");
+  }
 
   var title = $('<div class="title">');
-  title.html(`<h5>${mydata.name}</h3>`);
+  title.html(`<h5>${mydata.name}</h5>`);
   mydiv.append(title);
 
   var range = $('<div class="range">');
@@ -45,9 +62,7 @@ function appendSummaryBlock(ix, mydata) {
   );
   mydiv.append(range);
 
-  var visualization = $("<div>");
-  visualization.data("block-id", mydata.ix);
-  visualization.click(loadBlock);
+  var visualization = $('<div class="py-2">');
   mydiv.append(visualization);
 
   var svg = d3
@@ -199,10 +214,10 @@ function appendFullBlock(mydata) {
 
   // Three function that change the tooltip when user hover / move / leave a cell
   var mouseover = function (d) {
+    tooltip.style("opacity", 1);
     if (d.unassigned) {
       return;
     }
-    tooltip.style("opacity", 1);
     d3.select(this).style("stroke", "black").style("opacity", 1);
   };
   var mousemove = function (d) {
@@ -210,9 +225,20 @@ function appendFullBlock(mydata) {
       return;
     }
     tooltip
-      .html(
-        `
-        <h1 class="center-text">${String.fromCodePoint(d.cp)}</h1>
+      .style("left", d3.mouse(this)[0] + 70 + "px")
+      .style("top", d3.mouse(this)[1] + 70 + "px");
+    if (d.cp == window.oldcp) {
+      return;
+    }
+    window.oldcp = d.cp;
+    if (window.curfont != d.fonts[0]) {
+      start_string = "Loading...";
+    } else {
+      start_string = String.fromCodePoint(d.cp);
+    }
+    tooltip.html(
+      `
+        <h1 id="char" class="center-text noto">${start_string}</h1>
         <dl class="row">
           <dd class="col-sm-3">Codepoint</dd> <dt class="col-sm-9">${toHex(
             d.cp
@@ -224,9 +250,33 @@ function appendFullBlock(mydata) {
           ).join(", ")}</dt>
         </dl>
       `
-      )
-      .style("left", d3.mouse(this)[0] + 70 + "px")
-      .style("top", d3.mouse(this)[1] + "px");
+    );
+
+    if (d.fonts && window.curfont != d.fonts[0]) {
+      setTimeout(function () {
+        var thisfont = d.fonts[0];
+        console.log("Loading");
+        $("#anotofont").text(`
+            @font-face {
+               font-family: "Noto ${thisfont}";
+               src: url(${fontname2url(thisfont)});
+             }
+            .noto { font-family: "Noto ${thisfont}", sans-serif; }
+          `);
+        fontSpy(`Noto ${thisfont}`, {
+          glyphs: String.fromCodePoint(d.cp),
+          success: function () {
+            $("#char").html(String.fromCodePoint(d.cp));
+            console.log("Loaded font " + thisfont);
+          },
+          failure: function () {
+            console.log("Failed to load font " + thisfont);
+            $("#char").html(String.fromCodePoint(d.cp));
+          },
+        });
+        window.curfont = d.fonts[0];
+      }, 0);
+    }
   };
   var mouseleave = function (d) {
     if (d.unassigned) {
@@ -289,9 +339,14 @@ function coveragepercent(summary_block) {
 }
 
 $(function () {
-  $.getJSON("blocks.json", function (data) {
-    window.summary = data;
-    rebuildSummary();
+  $.getJSON("fontfiles.json", function (data) {
+    window.fontfiles = data;
+    window.curfont = "";
+    window.oldcp = 0;
+    $.getJSON("blocks.json", function (data) {
+      window.summary = data;
+      rebuildSummary();
+    });
   });
   $("#sort").change(function () {
     if ($("#sort").val() == "alpha") {
