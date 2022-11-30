@@ -61,7 +61,6 @@ function appendSummaryBlock(ix, mydata) {
     )}</small>`
   );
   mydiv.append(range);
-
   var visualization = $('<div class="py-2">');
   mydiv.append(visualization);
 
@@ -71,6 +70,28 @@ function appendSummaryBlock(ix, mydata) {
     .attr("width", width)
     .attr("height", height)
     .append("g");
+
+  if (mydata.name.includes("CJK Unified Ideographs")) {
+    svg.html(
+    `<filter id="noise2" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence numOctaves="1" type="fractalNoise"
+      baseFrequency="0.3" result="noise"></feTurbulence>
+      <feDiffuseLighting result="light" lighting-color="rgb(119,0,0)" surfaceScale="0.2">
+        <feDistantLight azimuth="35" elevation="90"></feDistantLight>
+      </feDiffuseLighting>
+    <feBlend in="noise" in2="light" mode="screen" />
+    </filter>`
+    );
+    svg.append("rect")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("filter", "url(#noise2)").attr("rx", 4)
+    .attr("ry", 4)
+    .style("fill", "#770000");
+    svg.append("text").attr("x", 10).attr("y",height/2).style("fill", "white").attr("font-weight", "bold")
+    .text("Click to view")
+    return;
+  }
 
   var codepoints = mydata.end - mydata.start + 1;
   rows = parseInt(codepoints ** 0.5);

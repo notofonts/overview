@@ -67,12 +67,25 @@
         </div>
       </div>
     </div>
-
-    <nav class="navbar fixed-top navbar-light bg-light">
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <h1 class="navbar-brand" href="#">The NotoVerse</h1>
-
-        <p class="navbar-text">
+        <div class="order-0 mr-auto">
+          <a class="navbar-brand" href="#"> Noto Dashboard </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  active" href="/overview">Overview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/analytics.html">Analytics</a>
+            </li>
+          </ul>
+        <p class="navbar-text ml-auto">
           Coverage:
           <span class="badge rounded-pill" style="background-color: olivedrab"
             >One font</span
@@ -89,14 +102,14 @@
           <span class="badge rounded-pill" style="background-color: black"
             >Special</span
           >
-        </p>
-        <select id="sort">
+          <br>
+        <select id="sort" class="form-select form-select-sm mt-1">
           <option value="cp">Sort by Codepoint</option>
           <option value="alpha">Sort Alphabetical</option>
           <option value="coverage">Sort by Coverage</option>
         </select>
-      </div>
-    </nav>
+      </p>
+</div></div></nav>
 
     <div class="container pt-5">
       <p class="pt-2"></p>
