@@ -22,7 +22,7 @@ jobs:
     - name: Fetch Noto fonts
       uses: actions/checkout@v2
       with:
-        repository: googlefonts/noto-fonts
+        repository: notofonts/notofonts.github.io
         path: noto-fonts
     - name: Fetch Noto CJK
       uses: actions/checkout@v2
