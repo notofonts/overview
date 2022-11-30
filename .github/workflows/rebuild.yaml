@@ -24,7 +24,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: notofonts/notofonts.github.io
-        path: noto-fonts
+        path: notofonts.github.io
     - name: Fetch Noto CJK
       uses: actions/checkout@v2
       with:
@@ -37,8 +37,6 @@ jobs:
         path: noto-emoji
     - name: Gather data
       run: python gather-codepoint-data.py
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         file_pattern: blocks/*.json blocks.json fontfiles.json
