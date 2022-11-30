@@ -9,7 +9,7 @@ font_files = {}
 noto_codepoints = defaultdict(list)
 
 sources = [
-    "notofonts.github.io/*/ttf/*/*Regular.?tf",
+    "notofonts.github.io/fonts/*/unhinted/ttf/*Regular.?tf",
     "noto-cjk/Sans/OTF/*/*Regular.?tf",
     "noto-emoji/fonts/NotoColorEmoji.ttf"
 ]
