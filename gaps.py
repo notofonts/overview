@@ -15,7 +15,8 @@ for i in incomplete:
         name = info.get("name")
         by_age[age] += 1
         mini_by_age[age] += 1
-        total_gaps += 1
+        if (name and "CJK" not in name) and "CJK" not in this_block["name"]:
+            total_gaps += 1
 
     if len(mini_by_age) == 1:
         print("  %s (%s): %i" % (i["name"], age, len(missing)))
