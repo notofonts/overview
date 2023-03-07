@@ -39,6 +39,8 @@ jobs:
         path: noto-emoji
     - name: Gather data
       run: python gather-codepoint-data.py
+    - name: Also make text gaplist
+      run: python gaps.py > gaplist.txt
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        file_pattern: blocks/*.json blocks.json fontfiles.json
+        file_pattern: blocks/*.json blocks.json fontfiles.json gaplist.txt
