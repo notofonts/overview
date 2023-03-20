@@ -42,6 +42,8 @@ By block:
     U+1DFA: COMBINING DOT BELOW LEFT
   Currency Symbols (14.0): 1
     U+20C0: SOM SIGN
+  Supplemental Mathematical Operators (3.2): 1
+    U+2AAC: SMALLER THAN OR EQUAL TO
   Miscellaneous Symbols and Arrows (11.0): 1
     U+2BFE: REVERSED RIGHT ANGLE
   Glagolitic (14.0): 2
@@ -126,8 +128,6 @@ By block:
     U+1DF29: LATIN SMALL LETTER S WITH MID-HEIGHT LEFT HOOK
     U+1DF2A: LATIN SMALL LETTER T WITH MID-HEIGHT LEFT HOOK
   Cyrillic Extended-D (15.0): 63
-  Nag Mundari (15.0): 42
-  Ottoman Siyaq Numbers (12.0): 61
   Enclosed Alphanumeric Supplement (13.0): 7
     U+1F10D: CIRCLED ZERO WITH SLASH
     U+1F10E: CIRCLED ANTICLOCKWISE ARROW
@@ -179,15 +179,16 @@ By block:
 By age:
   1.1: 3
   3.1: 41122
+  3.2: 1
   4.1: 107
   5.2: 4102
   6.0: 190
   8.0: 5650
   10.0: 7782
   11.0: 2
-  12.0: 79
+  12.0: 18
   13.0: 4979
   14.0: 313
-  15.0: 4468
+  15.0: 4426
 
-Total gaps: 991
+Total gaps: 889
