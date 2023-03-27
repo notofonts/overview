@@ -96,14 +96,6 @@ By block:
     U+11240: KHOJKI LETTER SHORT I
   Takri (14.0): 1
     U+116B9: TAKRI ABBREVIATION SIGN
-  Ahom (14.0): 7
-    U+11740: AHOM LETTER CA
-    U+11741: AHOM LETTER TTA
-    U+11742: AHOM LETTER TTHA
-    U+11743: AHOM LETTER DDA
-    U+11744: AHOM LETTER DDHA
-    U+11745: AHOM LETTER NNA
-    U+11746: AHOM LETTER LLA
   Devanagari Extended-A (15.0): 10
   Kawi (15.0): 86
   Egyptian Hieroglyphs (15.0): 1
@@ -119,7 +111,6 @@ By block:
   Kana Extended-A: 35 (10.0: 31, 14.0: 4)
   Small Kana Extension: 9 (12.0: 7, 15.0: 2)
   Znamenny Musical Notation (14.0): 185
-  Kaktovik Numerals (15.0): 20
   Latin Extended-G (15.0): 6
     U+1DF25: LATIN SMALL LETTER D WITH MID-HEIGHT LEFT HOOK
     U+1DF26: LATIN SMALL LETTER L WITH MID-HEIGHT LEFT HOOK
@@ -188,7 +179,7 @@ By age:
   11.0: 2
   12.0: 18
   13.0: 4979
-  14.0: 313
-  15.0: 4426
+  14.0: 306
+  15.0: 4406
 
-Total gaps: 889
+Total gaps: 862
