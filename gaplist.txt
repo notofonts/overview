@@ -24,8 +24,6 @@ By block:
   Kannada: 2 (14.0: 1, 15.0: 1)
     U+0CDD: KANNADA LETTER NAKAARA POLLU (14.0)
     U+0CF3: KANNADA SIGN COMBINING ANUSVARA ABOVE RIGHT (15.0)
-  Lao (15.0): 1
-    U+0ECE: LAO YAMAKKAN
   Mongolian (14.0): 1
     U+180F: MONGOLIAN FREE VARIATION SELECTOR FOUR
   New Tai Lue (4.1): 1
@@ -87,11 +85,8 @@ By block:
     U+11075: BRAHMI LETTER OLD TAMIL LLA
   Kaithi (14.0): 1
     U+110C2: KAITHI VOWEL SIGN VOCALIC R
-  Khojki (15.0): 2
-    U+1123F: KHOJKI LETTER QA
+  Khojki (15.0): 1
     U+11240: KHOJKI LETTER SHORT I
-  Takri (14.0): 1
-    U+116B9: TAKRI ABBREVIATION SIGN
   Devanagari Extended-A (15.0): 10
   Kawi (15.0): 86
   Egyptian Hieroglyphs (15.0): 1
@@ -175,7 +170,7 @@ By age:
   11.0: 2
   12.0: 18
   13.0: 4978
-  14.0: 305
-  15.0: 4406
+  14.0: 304
+  15.0: 4404
 
-Total gaps: 860
+Total gaps: 857
