@@ -88,7 +88,6 @@ By block:
   Khojki (15.0): 1
     U+11240: KHOJKI LETTER SHORT I
   Devanagari Extended-A (15.0): 10
-  Kawi (15.0): 86
   Egyptian Hieroglyphs (15.0): 1
     U+1342F: EGYPTIAN HIEROGLYPH V011D
   Egyptian Hieroglyph Format Controls: 38 (12.0: 9, 15.0: 29)
@@ -134,8 +133,6 @@ By block:
     U+1F77D: GONGGONG
     U+1F77E: QUAOAR
     U+1F77F: ORCUS
-  Geometric Shapes Extended (15.0): 1
-    U+1F7D9: NINE POINTED WHITE STAR
   Supplemental Symbols and Pictographs (10.0): 12
     U+1F900: CIRCLED CROSS FORMEE WITH FOUR DOTS
     U+1F901: CIRCLED CROSS FORMEE WITH TWO DOTS
@@ -171,6 +168,6 @@ By age:
   12.0: 18
   13.0: 4978
   14.0: 304
-  15.0: 4404
+  15.0: 4317
 
-Total gaps: 857
+Total gaps: 770
