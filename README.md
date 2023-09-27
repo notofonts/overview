@@ -8,3 +8,4 @@ This is an overview of the Noto project's Unicode coverage. It allows you to see
 (Note that in some of the CJK blocks, codepoints may be unsupported by Noto fonts simply because we can't actually fit any more glyphs into those fonts.)
 
 Suggestions for improvement are welcome - please add to the [issue tracker](https://github.com/notofonts/overview/issues).
+
