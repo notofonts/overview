@@ -1,1 +1,1 @@
-{"name": "Arabic Extended-C", "start": 69312, "end": 69375, "coverage": "none", "cps": {"69373": {"name": "ARABIC SMALL LOW WORD SAKTA"}, "69374": {"name": "ARABIC SMALL LOW WORD QASR"}, "69375": {"name": "ARABIC SMALL LOW WORD MADDA"}}, "age": "15.0"}
+{"name": "Arabic Extended-C", "start": 69312, "end": 69375, "coverage": "all", "cps": {"69373": {"name": "ARABIC SMALL LOW WORD SAKTA"}, "69374": {"name": "ARABIC SMALL LOW WORD QASR"}, "69375": {"name": "ARABIC SMALL LOW WORD MADDA"}}, "age": "15.0", "fonts": ["Kufi Arabic", "Naskh Arabic", "Sans Arabic"]}
