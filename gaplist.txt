@@ -2,8 +2,6 @@ By block:
   Hebrew (11.0): 1
     U+05EF: HEBREW YOD TRIANGLE
   Syriac Supplement (10.0): 11
-  Mongolian (14.0): 1
-    U+180F: MONGOLIAN FREE VARIATION SELECTOR FOUR
   Combining Diacritical Marks Extended (14.0): 5
     U+1AC1: COMBINING LEFT PARENTHESIS ABOVE LEFT
     U+1AC2: COMBINING RIGHT PARENTHESIS ABOVE RIGHT
@@ -96,8 +94,8 @@ By age:
   11.0: 2
   12.0: 18
   13.0: 4971
-  14.0: 226
+  14.0: 225
   15.0: 4304
   15.1: 627
 
-Total gaps: 663
+Total gaps: 662
