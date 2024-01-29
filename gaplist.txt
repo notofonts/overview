@@ -36,13 +36,6 @@ By block:
   CJK Compatibility Ideographs (4.1): 106
   Arabic Presentation Forms-A (3.1): 32
   Specials (1.1): 2
-  Brahmi (14.0): 6
-    U+11070: BRAHMI SIGN OLD TAMIL VIRAMA
-    U+11071: BRAHMI LETTER OLD TAMIL SHORT E
-    U+11072: BRAHMI LETTER OLD TAMIL SHORT O
-    U+11073: BRAHMI VOWEL SIGN OLD TAMIL SHORT E
-    U+11074: BRAHMI VOWEL SIGN OLD TAMIL SHORT O
-    U+11075: BRAHMI LETTER OLD TAMIL LLA
   Devanagari Extended-A (15.0): 10
   Egyptian Hieroglyphs (15.0): 1
     U+1342F: EGYPTIAN HIEROGLYPH V011D
@@ -94,8 +87,8 @@ By age:
   11.0: 2
   12.0: 18
   13.0: 4971
-  14.0: 225
+  14.0: 219
   15.0: 4304
   15.1: 627
 
-Total gaps: 662
+Total gaps: 656
