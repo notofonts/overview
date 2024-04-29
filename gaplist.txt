@@ -1,6 +1,4 @@
 By block:
-  Hebrew (11.0): 1
-    U+05EF: HEBREW YOD TRIANGLE
   Syriac Supplement (10.0): 11
   Combining Diacritical Marks Extended (14.0): 5
     U+1AC1: COMBINING LEFT PARENTHESIS ABOVE LEFT
@@ -114,11 +112,11 @@ By age:
   6.0: 190
   8.0: 5650
   10.0: 7770
-  11.0: 2
+  11.0: 1
   12.0: 18
   13.0: 4971
   14.0: 219
   15.0: 4297
   15.1: 627
 
-Total gaps: 649
+Total gaps: 648
