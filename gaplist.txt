@@ -34,7 +34,6 @@ By block:
   CJK Compatibility Ideographs (4.1): 106
   Arabic Presentation Forms-A (3.1): 32
   Specials (1.1): 2
-  Devanagari Extended-A (15.0): 10
   Egyptian Hieroglyph Format Controls: 32 (12.0: 9, 15.0: 23)
     U+13430: EGYPTIAN HIEROGLYPH VERTICAL JOINER (12.0)
     U+13431: EGYPTIAN HIEROGLYPH HORIZONTAL JOINER (12.0)
@@ -77,7 +76,6 @@ By block:
   Kana Supplement: 256 (6.0: 2, 10.0: 254)
   Kana Extended-A: 35 (10.0: 31, 14.0: 4)
   Small Kana Extension: 9 (12.0: 7, 15.0: 2)
-  Znamenny Musical Notation (14.0): 185
   Latin Extended-G (15.0): 6
     U+1DF25: LATIN SMALL LETTER D WITH MID-HEIGHT LEFT HOOK
     U+1DF26: LATIN SMALL LETTER L WITH MID-HEIGHT LEFT HOOK
@@ -115,8 +113,8 @@ By age:
   11.0: 1
   12.0: 18
   13.0: 4971
-  14.0: 219
-  15.0: 4297
+  14.0: 34
+  15.0: 4287
   15.1: 627
 
-Total gaps: 648
+Total gaps: 453
