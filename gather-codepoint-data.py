@@ -95,4 +95,4 @@ for ix, (start, end, name) in enumerate(block_ranges):
     blocks.append(summary_block)
 
 json.dump(blocks, open("blocks.json", "w"))
-json.dump(font_files, open("fontfiles.json", "w"))
+json.dump(dict(sorted(font_files.items())), open("fontfiles.json", "w"))
