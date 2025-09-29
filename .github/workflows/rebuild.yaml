@@ -1,5 +1,7 @@
 name: Rebuild and deploy data files
 
+permissions:
+
 on:
   schedule:
     - cron: '0 0 * * 1'
@@ -7,6 +9,8 @@ on:
 
 jobs:
   build:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
