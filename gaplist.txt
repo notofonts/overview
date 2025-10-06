@@ -47,8 +47,6 @@ By block:
   Cyrillic Extended-C (16.0): 2
     U+1C89: CYRILLIC CAPITAL LETTER TJE
     U+1C8A: CYRILLIC SMALL LETTER TJE
-  Combining Diacritical Marks Supplement (14.0): 1
-    U+1DFA: COMBINING DOT BELOW LEFT
   Currency Symbols (17.0): 1
     U+20C1: SAUDI RIYAL SIGN
   Control Pictures (16.0): 3
@@ -116,7 +114,6 @@ By block:
     U+FDCD: ARABIC LIGATURE AJJAL ALLAAHU TAAALAA FARAJAHU ASH-SHAREEF (17.0)
     U+FDCE: ARABIC LIGATURE KARRAMA ALLAAHU WAJHAH (17.0)
   Specials (1.1): 2
-  Todhri (16.0): 52
   Sidetic (17.0): 26
   Garay (16.0): 69
   Arabic Extended-C: 18 (16.0: 4, 17.0: 14)
@@ -223,8 +220,8 @@ By block:
     U+18D1E: <Tangut Ideograph Supplement, Last>
   Tangut Components Supplement (17.0): 115
   Kana Extended-B (14.0): 13
-  Kana Supplement: 256 (6.0: 2, 10.0: 254)
-  Kana Extended-A: 35 (10.0: 31, 14.0: 4)
+  Kana Extended-A (14.0): 1
+    U+1B11F: HIRAGANA LETTER ARCHAIC WU
   Small Kana Extension: 9 (12.0: 7, 15.0: 2)
   Symbols for Legacy Computing Supplement: 695 (16.0: 686, 17.0: 9)
   Miscellaneous Symbols Supplement (17.0): 34
@@ -332,15 +329,15 @@ By age:
   3.1: 41122
   4.1: 106
   5.2: 4102
-  6.0: 190
+  6.0: 188
   8.0: 5650
-  10.0: 7770
+  10.0: 7485
   12.0: 18
   13.0: 4994
-  14.0: 34
+  14.0: 30
   15.0: 4287
   15.1: 627
-  16.0: 5134
+  16.0: 5082
   17.0: 4796
 
-Total gaps: 6058
+Total gaps: 5715
